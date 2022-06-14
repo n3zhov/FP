@@ -1,0 +1,105 @@
+\documentclass[12pt]{article}
+
+% Специальный шрифт, чтобы лучше читалось
+\usepackage{libertine}
+
+\usepackage{fullpage}
+
+\usepackage{multicol,multirow,csquotes}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection.}{0.3em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection.}{0.3em}{}
+
+\titlespacing{\section}{0pt}{*2}{*2}
+\titlespacing{\subsection}{0pt}{*1}{*1}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\usepackage{listings}
+\lstloadlanguages{Lisp}
+\lstset{extendedchars=false,
+	breaklines=true,
+	breakatwhitespace=true,
+	keepspaces = true,
+	tabsize=8
+}
+\begin{document}
+
+\section*{Отчет по лабораторной работе № 4 \\
+по курсу \guillemotleft Функциональное программирование\guillemotright}
+\begin{flushright}
+Студент группы М8О-307-19 МАИ \textit{Ежов Никита Павлович}, \textnumero 9 по списку \\
+\makebox[7cm]{Контакты: {\tt nikita.ejov2012@yandex.ru} \hfill} \\
+\makebox[7cm]{Работа выполнена: 25.05.2022 \hfill} \\
+\ \\
+Преподаватель: Иванов Дмитрий Анатольевич, доц. каф. 806 \\
+\makebox[7cm]{Отчет сдан: \hfill} \\
+\makebox[7cm]{Итоговая оценка: \hfill} \\
+\makebox[7cm]{Подпись преподавателя: \hfill} \\
+
+\end{flushright}
+
+\section{Тема работы}
+Последовательности, массивы и управляющие конструкции Common Lisp.
+
+\section{Цель работы}
+Научиться работать с литерами (знаками) и строками при помощи функций обработки строк и общих функций работы с последовательностями.
+
+\section{Задание (вариант № 4.13)}
+Запрограммировать на языке Коммон Лисп функцию, принимающую один аргумент - предложение.
+
+Функция должна возвращать копию исходного предложения, в которой из каждого слова удалена первая литера. Полученные пустые слова отбрасываются и оставшиеся непустые слова должны разделяться лишь одним пробелом.
+
+(trim-first-char "это  ушла срезка  с плугом") => "то шла резка лугом"
+
+\section{Оборудование студента}
+Процессор Intel i7-4770 (8) @ 3.9GHz, память: 16 Gb, разрядность системы: 64.
+
+\section{Программное обеспечение}
+ОС Kubuntu 20.04.4 LTS, комилятор GNU CLISP 2.49.92, текстовый редактор Visual Studio Code 1.67.1
+
+\pagebreak
+\section{Идея, метод, алгоритм}
+Мы разбиваем строку на слова, при этом удаляя из этих слов первый символ. Потом обратно склеливаем слова в конечную строку и
+возвращаем её.
+
+\section{Сценарий выполнения работы}
+
+\section{Распечатка программы и её результаты}
+
+\subsection{Исходный код}
+\lstinputlisting{./Ezhov_307_Lab4.lisp}
+
+\pagebreak
+\subsection{Результаты работы}
+[1]> (trim-first-char \enquote{это  ушла срезка  с плугом})
+
+
+\enquote{то шла резка лугом}
+
+\pagebreak
+\section{Дневник отладки}
+\begin{tabular}{|p{50pt}|p{140pt}|p{140pt}|p{80pt}|}
+\hline
+Дата & Событие & Действие по исправлению & Примечание \\
+\hline
+\end{tabular}
+
+\section{Замечания автора по существу работы}
+
+Сложность полученного решения $O(n)$. Пространственная сложность тоже $O(n)$, поэтому добиться лучшей асимптотики нельзя.
+
+\section{Выводы}
+Я познакомился со строками и литерами в Common Lisp. Очень приятно использовать высокоуровневые функции, например subseq,
+встроенные в язык. Чем-то напоминает Python, в котором так же легко работать со строками
+
+\end{document}

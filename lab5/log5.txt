@@ -1,0 +1,4 @@
+[8]> (fourth-vertex-cart (make-instance 'cart :x 1 :y 1) (make-instance 'cart :x 1 :y 4) (make-instance 'cart :x 2 :y 3))
+[CART x 2 y 6]
+[9]> (fourth-vertex-cart (make-instance 'polar :angle 0.79 :radius 1.41) (make-instance 'polar :angle 1.33 :radius 4.12) (make-instance 'polar :angle 0.98 :radius 3.61))
+[CART x 2.0009503 y 5.997628]
